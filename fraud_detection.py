@@ -121,7 +121,7 @@ print(rforest_pred)
 
 print(confusion_matrix(y_test, rforest_pred.round()))
 
-#31 False Positive from the random forest classifier compared to the 62 from logistic regression
+#31 False Positive from the random forest classifier compared to the 62 from logistic regression. Random Forest Classifier is better in this situation.
 
 #Oversampling to handle imbalanced datasets
 from sklearn.utils import resample
@@ -163,6 +163,8 @@ upsampled_rf = RandomForestClassifier(n_estimators=10).fit(X_train, y_train)
 upsampled_rf_pred = upsampled_rf.predict(X_test)
 
 print(confusion_matrix(y_test, upsampled_rf_pred.round()))
+
+#Using the Over-samping, the logistic regression classifier seems to do better as there are 12 false positives in comparison to 33 for the Random Forest classifier. This is also much better than without over-sampling.
 
 #Informed Over Sampling: Synthetic Minority Over-sampling Technique
 #Import SMOTE
